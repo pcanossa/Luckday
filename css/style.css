@@ -1,0 +1,32 @@
+body {
+    font-family: 'Ubuntu';
+    background-color: rgb(38, 38, 38);
+}
+
+.cabecalho {
+    background-color: rgb(143, 179, 147);
+    box-shadow: 5px 5px 5px #a7fc99;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.escolhas {
+    padding: 15px;
+}
+
+.btnenvia {
+    background-color: rgb(143, 179, 147);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+.btnenvia:hover {
+    background-color:  #a7fc99;
+}
+
+.resultado {
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: 20px;
+}
