@@ -15,15 +15,19 @@ function somaUmNumero (numero) {
     while (somaPartes > 10) {
         let particionado = somaPartes / 10;
         let primeiraParte = parseInt(particionado);
-        let segundaParte = parseInt((particionado - primeiraParte)*10);
+        let segundaParte = (particionado - primeiraParte)*10;
         somaPartes = primeiraParte + segundaParte;
         console.log(particionado, primeiraParte, segundaParte, somaPartes);
     }
-    if (somaPartes < 5) {
-        let fator = 6 - somaPartes;
+    if (somaPartes < 6) {
+        let fator = 10 - somaPartes;
         let fatorRnd = Math.random()*fator;
         somaPartes += fatorRnd;
         console.log(somaPartes, fator, fatorRnd);
+    } else {
+        let fatorRnd = Math.random()*somaPartes;
+        somaPartes -= fatorRnd;
+        console.log(somaPartes, fatorRnd);
     }
     return somaPartes;
 }

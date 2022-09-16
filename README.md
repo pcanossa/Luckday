@@ -4,4 +4,3 @@ Link para acesso: <https://anishelter.com.br/Luckday/>
 
 ![image](https://user-images.githubusercontent.com/100949100/190427716-f250338e-4fac-4c89-b49d-86fa91316f47.png)
 
-
