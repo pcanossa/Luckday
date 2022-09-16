@@ -1,7 +1,7 @@
 //Bloco de verificação da validade dos valores inseridos peloo usuário, para número da sorte e cor, verificando se não são nulos u se valoor digitado não é maior que 99.
 function verificaOpcoes (cor, num) {
     let validade = false;
-    if (cor == "Escolha uma cor" || num == null || num > 99) {
+    if (cor == "Escolha uma cor" || num == null ) {
         return validade;
     } else {
       validade = true;
@@ -9,20 +9,26 @@ function verificaOpcoes (cor, num) {
     }
 }
 
-//Bloco onde oos algarismos do número da sorte inseridos são somados, até se tornarem somente um algarismo (de 0 a 9), onde esse será utilizado como multiplicador para definir a sorte d dia
+//Bloco onde oos algarismos do número da sorte inseridos são somados, até se tornarem somente um algarismo (de 0 a 10), onde esse será utilizado como multiplicador para definir a sorte d dia
 function somaUmNumero (numero) {
     let somaPartes = numero;
-    while (somaPartes >= 10) {
+    while (somaPartes > 10) {
         let particionado = somaPartes / 10;
         let primeiraParte = parseInt(particionado);
         let segundaParte = parseInt((particionado - primeiraParte)*10);
         somaPartes = primeiraParte + segundaParte;
         console.log(particionado, primeiraParte, segundaParte, somaPartes);
     }
+    if (somaPartes < 5) {
+        let fator = 6 - somaPartes;
+        let fatorRnd = Math.random()*fator;
+        somaPartes += fatorRnd;
+        console.log(somaPartes, fator, fatorRnd);
+    }
     return somaPartes;
 }
 
-//bloco onde através de um laço de repetições, é gerado de forma randômica um valr de  0 a 9 para cada cor disponível para escolha, pelo qual será multiplicad pelo valor da soma de algarismos do número da srte inserido
+//bloco onde através de um laço de repetições, é gerado de forma randômica um valr de  0 a 10 para cada cor disponível para escolha, pelo qual será multiplicad pelo valor da soma de algarismos do número da srte inserido
 function defineValorCores () {
 
     let cores = [];
@@ -45,12 +51,12 @@ function mostraResultado (valorNum, valorCor) {
     if (sorte > 50) {
         $(document).ready(function() {
             $(".resultado").css("backgroundColor", "rgb(143, 179, 147)");
-            $(".resultado").html("<p>Sorte de "+sorte+"%<p>");
+            $(".resultado").html("<p>Sorte: Percentual da sorte de "+sorte+"%<p>");
         });
     } else {
         $(document).ready(function() {
             $(".resultado").css("backgroundColor", "#caa299");
-            $(".resultado").html("<p>Azar de "+sorte+"%<p>");
+            $(".resultado").html("<p>Azar: Percentual da sorte de "+sorte+"%<p>");
         });
     } 
 }

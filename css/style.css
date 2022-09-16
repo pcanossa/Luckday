@@ -12,6 +12,7 @@ body {
 
 .escolhas {
     padding: 15px;
+    flex-wrap: wrap;
 }
 
 .btnenvia {
@@ -29,4 +30,10 @@ body {
     border-radius: 3px;
     padding: 15px;
     margin-top: 20px;
+}
+
+.explica {
+    padding: 15px;
+    margin-top: 10px;
+    color: whitesmoke;
 }
